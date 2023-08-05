@@ -2,7 +2,6 @@ import os
 import json
 import pandas as pd
 import gc
-import torch
 import transformers
 import peft
 import datasets
@@ -10,26 +9,6 @@ from contextlib import nullcontext
 from datasets import Dataset, DatasetDict
 from sklearn.model_selection import train_test_split
 from config import *
-
-def load_data(feather_files, metadata_file):
-    # Load metadata
-    with open(metadata_file, 'r') as f:
-        metadata = json.load(f)
-
-    # Load and merge data
-    data_frames = [pd.read_feather(f) for f in feather_files]
-    data = pd.merge(data_frames[0], data_frames[1], on=["machineID", "datetime", "anomaly"])
-
-    # Combine necessary columns
-    combined_cols = metadata['error_cols'] + metadata['failure_cols'] + metadata['data_cols']
-    data = data.assign(signal=data.apply(lambda
-                                             row: f"Detect iot device with volt: {row['volt']} vibration: {row['vibration']} pressure: {row['pressure']} rotate: {row['rotate']} \n\n detect failure: {row['failure']} anomaly: {row['anomaly']}",
-                                         axis=1))
-    data = data.assign(failure=data.apply(lambda row: f"failure {row['failure']} and anomaly {row['anomaly']}", axis=1))
-    drop_cols = [col for col in data.columns if col not in ['signal', 'failure']]
-    data = data.drop(columns=drop_cols)
-
-    return data
 
 
 class Trainer(object):
@@ -43,7 +22,6 @@ class Trainer(object):
         self.tokenizer = None
         self.trainer = None
 
-        self.should_abort = False
         self.feather_files = None  # ['sample_data/iot_pmfp_data.feather', 'sample_data/iot_pmfp_labels.feather']
         self.metadata_file = None  # 'sample_data/metadata.json'
         self.label_col = 'failure'
@@ -61,7 +39,6 @@ class Trainer(object):
 
     def train(self, feather_files, metadata_file, new_peft_model_name, **kwargs):
         """Train new model"""
-        assert self.should_abort is False
         assert self.model is not None
         assert self.model_name is not None
         assert self.tokenizer is not None
@@ -104,22 +81,6 @@ class Trainer(object):
             output_dir=output_dir,
         )
 
-        def should_abort():
-            return self.should_abort
-
-        def reset_abort():
-            self.should_abort = False
-
-        class AbortCallback(transformers.TrainerCallback):
-            def on_step_end(self, args, state, control, **kwargs):
-                if should_abort():
-                    print("Stopping training...")
-                    control.should_training_stop = True
-
-            def on_train_end(self, args, state, control, **kwargs):
-                if should_abort():
-                    control.should_save = False
-
         self.trainer = transformers.Trainer(
             model=self.model,
             args=training_args,
@@ -128,17 +89,12 @@ class Trainer(object):
                 mlm=False,
             ),
             train_dataset=self.dataset['train'],
-            eval_dataset=self.dataset['validation'],
-            callbacks=[AbortCallback()]
+            eval_dataset=self.dataset['validation']
         )
 
         self.model.config.use_cache = False
         result = self.trainer.train(resume_from_checkpoint=False)
 
-        if not should_abort():
-            self.model.save_pretrained(output_dir)
-
-        reset_abort()
         return result
 
     def generate(self, prompt, **kwargs):
@@ -224,12 +180,16 @@ class Trainer(object):
         return training_dataset
 
     def prepare_dataset(self, dataframe):
-        train, test = train_test_split(dataframe, test_size=0.2, random_state=42)
-        test, val = train_test_split(test, test_size=0.5, random_state=42)
+        train, test = train_test_split(dataframe, test_size=0.2, random_state=42)  # 80% for training
+        test, val = train_test_split(test, test_size=0.5, random_state=42)  # 10% for test and validation
 
-        dataset = DatasetDict({"train": Dataset.from_pandas(train),
-                               "test": Dataset.from_pandas(test),
-                               "validation": Dataset.from_pandas(val)})
+        dataset = DatasetDict(
+            {
+                "train": Dataset.from_pandas(train),  # 80%
+                "test": Dataset.from_pandas(test),  # 10%
+                "validation": Dataset.from_pandas(val)  # 10%
+            }
+        )
 
         self.dataset = dataset
 
@@ -334,5 +294,23 @@ class Trainer(object):
             generation_config=kwargs
         )[0].to(self.model.device)
 
-    def abort_training(self):
-        self.should_abort = True
+
+def load_data(feather_files, metadata_file):
+    # Load metadata
+    with open(metadata_file, 'r') as f:
+        metadata = json.load(f)
+
+    # Load and merge data
+    data_frames = [pd.read_feather(f) for f in feather_files]
+    data = pd.merge(data_frames[0], data_frames[1], on=["machineID", "datetime", "anomaly"])
+
+    data = data.assign(
+        signal=data.apply(
+            lambda
+                row: f"Detect iot device with volt: {row['volt']} vibration: {row['vibration']} pressure: {row['pressure']} rotate: {row['rotate']} \n\n detect failure: {row['failure']} anomaly: {row['anomaly']}",
+            axis=1))
+    data = data.assign(failure=data.apply(lambda row: f"failure {row['failure']} and anomaly {row['anomaly']}", axis=1))
+    drop_cols = [col for col in data.columns if col not in ['signal', 'failure']]
+    data = data.drop(columns=drop_cols)
+
+    return data

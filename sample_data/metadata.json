@@ -1,0 +1,1 @@
+{"label_cols": ["machineID", "age", "model"], "time_col": "datetime", "data_cols": ["volt", "rotate", "vibration", "pressure"], "error_cols": ["error1", "error2", "error3", "error4", "error5"], "failure_cols": ["failure_comp1", "failure_comp2", "failure_comp3", "failure_comp4"], "maint_cols": ["maint_comp1", "maint_comp2", "maint_comp3", "maint_comp4"]}

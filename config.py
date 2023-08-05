@@ -3,12 +3,8 @@ import torch
 HAS_CUDA = torch.cuda.is_available()
 DEVICE = torch.device('cuda' if HAS_CUDA else 'cpu')
 
-MODELS = [
-    'google/flan-t5-xl'
-]
-
 DEVICE_MAP = 'auto'
-MODEL = 'cerebras/Cerebras-GPT-2.7B'
+MODEL = 'google/flan-t5-base'
 
 TRAINING_PARAMS = {
     'max_seq_length': 256,
@@ -26,12 +22,15 @@ LORA_TRAINING_PARAMS = {
 
 GENERATION_PARAMS = {
     'max_new_tokens': 80,
-    'temperature': 0.1,
+    'temperature': 0.0001,
     'top_k': 40,
     'top_p': 0.3,
-    'repetition_penalty': 1.5,
+    'repetition_penalty': 0.1,
     'do_sample': 'store_true',
     'num_beams': 1,
 }
 
 SHARE = 'store_true'
+
+FAILURE_PROMPT = "Detect iot device with volt: {0} vibration: {1} pressure: {2} rotate: {3} \n\n detect failure is True or False"
+ANOMALY_PROMPT = "Detect iot device with volt: {0} vibration: {1} pressure: {2} rotate: {3} \n\n detect anomaly is True or False"
