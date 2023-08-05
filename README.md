@@ -32,7 +32,9 @@ python main.py --train-files=sample_data/iot_pmfp_data.feather,sample_data/iot_p
                --train=True
 ```
 # Start
+We train the new model `iot-device` from `google/flan-t5-base`, time to start the service from there
 ```shell
-python main.py --trained-new-name=iot-device
+python main.py --train-base-model=google/flan-t5-base
+               --trained-new-name=iot-device
                --train=False
 ```
