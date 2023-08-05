@@ -20,5 +20,19 @@ The generate function uses the loaded model and tokenizer to generate a response
 * How to load and prepare data for a sequence-to-sequence machine learning model.
 * How to train a model using the Transformers library and additional optimization techniques by `peft` and `lora`
 
-# Missing part
+## Missing part
 * Didn't adopt `accelerate` to speed up training
+
+# Train
+```shell
+python main.py --train-files=sample_data/iot_pmfp_data.feather,sample_data/iot_pmfp_labels.feather
+               --metadata-file=sample_data/metadata.json
+               --train-base-model=google/flan-t5-base
+               --trained-new-name=iot-device
+               --train=True
+```
+# Start
+```shell
+python main.py --trained-new-name=iot-device
+               --train=False
+```
