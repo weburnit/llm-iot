@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from config import *
 
 
-class Trainer(object):
+class IoTModel(object):
     def __init__(self):
         self.model = None
         self.model_name = None
@@ -296,13 +296,7 @@ class Trainer(object):
 
 
 def load_data(feather_files, metadata_file):
-    # Load metadata
-    with open(metadata_file, 'r') as f:
-        metadata = json.load(f)
-
-    # Load and merge data
-    data_frames = [pd.read_feather(f) for f in feather_files]
-    data = pd.merge(data_frames[0], data_frames[1], on=["machineID", "datetime", "anomaly"])
+    data = load_dataframe(feather_files, metadata_file)
 
     data = data.assign(
         signal=data.apply(
@@ -312,5 +306,13 @@ def load_data(feather_files, metadata_file):
     data = data.assign(failure=data.apply(lambda row: f"failure {row['failure']} and anomaly {row['anomaly']}", axis=1))
     drop_cols = [col for col in data.columns if col not in ['signal', 'failure']]
     data = data.drop(columns=drop_cols)
+
+    return data
+
+
+def load_dataframe(feather_files, metadata_file):
+    # Load and merge data
+    data_frames = [pd.read_feather(f) for f in feather_files.split(',')]
+    data = pd.merge(data_frames[0], data_frames[1], on=["machineID", "datetime", "anomaly"])
 
     return data
