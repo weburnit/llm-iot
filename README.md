@@ -11,6 +11,14 @@
 
 ![High Chart IoT Signal](./demo.png)
 
+# Installation
+```shell
+git clone https://github.com/weburnit/llm-iot
+cd llm-iot
+
+pip install -r requirements.txt
+pip install -e .
+```
 # Train
 
 ```shell
