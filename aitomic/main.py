@@ -1,3 +1,5 @@
+import datetime
+
 from fastapi import FastAPI, WebSocket, Request, WebSocketDisconnect
 from aitomic.config import FAILURE_PROMPT, ANOMALY_PROMPT
 from aitomic.iot import SensorData, mock_mqtt
@@ -48,7 +50,7 @@ async def websocket_mqtt_endpoint(*, websocket: WebSocket):
             data = await websocket.receive_text()
             sensor_data = SensorData.parse_raw(data)
 
-            if HAS_CUDA:
+            if HAS_CUDA:  # Detect anomaly and failure
                 anomaly_detection = await trainer.generate(
                     ANOMALY_PROMPT.format(sensor_data.volt, sensor_data.vibration, sensor_data.pressure,
                                           sensor_data.rotate))
@@ -57,6 +59,10 @@ async def websocket_mqtt_endpoint(*, websocket: WebSocket):
                                           sensor_data.rotate))
                 sensor_data.anomaly = 'true' in anomaly_detection.lower()
                 sensor_data.failure = 'true' in failure_detection.lower()
+            else:  # Mock anomaly detection
+                if datetime.datetime.now().timestamp() % 3 <= 1:
+                    sensor_data.anomaly = True
+                    sensor_data.failure = True
             await manager.broadcast(sensor_data.dict())
             await websocket.send_json({'received': True})
     except WebSocketDisconnect:

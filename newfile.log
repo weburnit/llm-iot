@@ -1,0 +1,180 @@
+2023-08-08 11:43:28,660 Created a temporary directory at /var/folders/fs/2_vzpjjd4b76xv4bwdgnkf880000gn/T/tmp9s01w0an
+2023-08-08 11:43:28,661 Writing /var/folders/fs/2_vzpjjd4b76xv4bwdgnkf880000gn/T/tmp9s01w0an/_remote_module_non_scriptable.py
+2023-08-08 11:43:29,179 Using selector: KqueueSelector
+2023-08-08 11:43:29,195 = connection is CONNECTING
+2023-08-08 11:43:29,195 > GET /ws/mqtt HTTP/1.1
+2023-08-08 11:43:29,196 > Host: localhost:8085
+2023-08-08 11:43:29,196 > Upgrade: websocket
+2023-08-08 11:43:29,196 > Connection: Upgrade
+2023-08-08 11:43:29,196 > Sec-WebSocket-Key: HrdELSZix3c8OyM0avDcGA==
+2023-08-08 11:43:29,196 > Sec-WebSocket-Version: 13
+2023-08-08 11:43:29,196 > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2023-08-08 11:43:29,196 > User-Agent: Python/3.9 websockets/11.0.3
+2023-08-08 11:43:29,200 < HTTP/1.1 101 Switching Protocols
+2023-08-08 11:43:29,200 < Upgrade: websocket
+2023-08-08 11:43:29,200 < Connection: Upgrade
+2023-08-08 11:43:29,200 < Sec-WebSocket-Accept: HO8sG7Y3Z79mdZAt6w6HHXF6ioM=
+2023-08-08 11:43:29,200 < Sec-WebSocket-Extensions: permessage-deflate
+2023-08-08 11:43:29,200 < date: Tue, 08 Aug 2023 04:43:28 GMT
+2023-08-08 11:43:29,200 < server: uvicorn
+2023-08-08 11:43:29,200 = connection is OPEN
+2023-08-08 11:43:30,300 > TEXT '{"timestamp":1691469810.297828,"vibration":45.0...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:30,301 > Writing {"timestamp":1691469810.297828,"vibration":45.0876857639276,"rotate":418.504078221616,"pressure":113.077935462083,"volt":176.217853015625,"anomaly":false,"failure":false}
+2023-08-08 11:43:30,303 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:31,303 > TEXT '{"timestamp":1691469811.303064,"vibration":43.4...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:31,303 > Writing {"timestamp":1691469811.303064,"vibration":43.4139726834815,"rotate":402.747489565395,"pressure":95.4605253823187,"volt":162.87922289706,"anomaly":false,"failure":false}
+2023-08-08 11:43:31,304 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:32,305 > TEXT '{"timestamp":1691469812.304911,"vibration":34.1...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:32,305 > Writing {"timestamp":1691469812.304911,"vibration":34.1788471214451,"rotate":527.349825452291,"pressure":75.2379048586662,"volt":170.989902405567,"anomaly":false,"failure":false}
+2023-08-08 11:43:32,308 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:33,307 > TEXT '{"timestamp":1691469813.307628,"vibration":41.1...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:33,308 > Writing {"timestamp":1691469813.307628,"vibration":41.1221440884256,"rotate":346.149335043074,"pressure":109.248561276504,"volt":162.462833264092,"anomaly":false,"failure":false}
+2023-08-08 11:43:33,309 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:34,310 > TEXT '{"timestamp":1691469814.310078,"vibration":25.9...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:34,310 > Writing {"timestamp":1691469814.310078,"vibration":25.9905109982024,"rotate":435.376873016938,"pressure":111.886648210168,"volt":157.61002119306,"anomaly":false,"failure":false}
+2023-08-08 11:43:34,311 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:35,313 > TEXT '{"timestamp":1691469815.312434,"vibration":35.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:35,314 > Writing {"timestamp":1691469815.312434,"vibration":35.6550173268837,"rotate":430.323362106675,"pressure":95.9270416939636,"volt":172.504839196295,"anomaly":false,"failure":false}
+2023-08-08 11:43:35,315 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:36,315 > TEXT '{"timestamp":1691469816.31528,"vibration":42.75...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:36,316 > Writing {"timestamp":1691469816.31528,"vibration":42.7539196974773,"rotate":499.071623068962,"pressure":111.755684290096,"volt":156.556030606329,"anomaly":false,"failure":false}
+2023-08-08 11:43:36,317 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:37,318 > TEXT '{"timestamp":1691469817.317834,"vibration":35.4...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:37,318 > Writing {"timestamp":1691469817.317834,"vibration":35.4820086610704,"rotate":409.624717000438,"pressure":101.00108276407,"volt":172.522780814836,"anomaly":false,"failure":false}
+2023-08-08 11:43:37,318 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:38,320 > TEXT '{"timestamp":1691469818.3199,"vibration":45.482...:false,"failure":false}' [168 bytes]
+2023-08-08 11:43:38,320 > Writing {"timestamp":1691469818.3199,"vibration":45.4822868466294,"rotate":398.648780707752,"pressure":110.624360548654,"volt":175.324523915223,"anomaly":false,"failure":false}
+2023-08-08 11:43:38,321 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:39,321 > TEXT '{"timestamp":1691469819.321314,"vibration":39.9...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:39,321 > Writing {"timestamp":1691469819.321314,"vibration":39.9017354356787,"rotate":460.850669930244,"pressure":104.848229967003,"volt":169.218423246933,"anomaly":false,"failure":false}
+2023-08-08 11:43:39,323 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:40,324 > TEXT '{"timestamp":1691469820.323683,"vibration":42.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:40,324 > Writing {"timestamp":1691469820.323683,"vibration":42.6757999060571,"rotate":382.483542906686,"pressure":103.780662505568,"volt":167.060980719256,"anomaly":false,"failure":false}
+2023-08-08 11:43:40,326 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:41,326 > TEXT '{"timestamp":1691469821.326442,"vibration":38.5...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:41,327 > Writing {"timestamp":1691469821.326442,"vibration":38.5436809273919,"rotate":448.084255968416,"pressure":96.4809756730127,"volt":160.263953725914,"anomaly":false,"failure":false}
+2023-08-08 11:43:41,328 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:42,329 > TEXT '{"timestamp":1691469822.328967,"vibration":44.1...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:42,330 > Writing {"timestamp":1691469822.328967,"vibration":44.1085543746712,"rotate":490.672921027229,"pressure":86.0124402476987,"volt":153.353491529019,"anomaly":false,"failure":false}
+2023-08-08 11:43:42,331 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:43,331 > TEXT '{"timestamp":1691469823.331668,"vibration":41.3...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:43,332 > Writing {"timestamp":1691469823.331668,"vibration":41.3671897268129,"rotate":418.199251966527,"pressure":93.4849540613739,"volt":182.739113039826,"anomaly":false,"failure":false}
+2023-08-08 11:43:43,333 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:44,334 > TEXT '{"timestamp":1691469824.334115,"vibration":39.7...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:44,334 > Writing {"timestamp":1691469824.334115,"vibration":39.7398826787247,"rotate":402.461186552994,"pressure":93.2357870560117,"volt":170.33543789114,"anomaly":false,"failure":false}
+2023-08-08 11:43:44,335 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:45,336 > TEXT '{"timestamp":1691469825.336307,"vibration":51.0...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:45,336 > Writing {"timestamp":1691469825.336307,"vibration":51.0214861151087,"rotate":501.918972726944,"pressure":85.7626146951866,"volt":182.467109259603,"anomaly":false,"failure":false}
+2023-08-08 11:43:45,337 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:46,339 > TEXT '{"timestamp":1691469826.33879,"vibration":42.11...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:46,340 > Writing {"timestamp":1691469826.33879,"vibration":42.1196520943364,"rotate":444.922656455828,"pressure":94.2473713287117,"volt":151.335682229837,"anomaly":false,"failure":false}
+2023-08-08 11:43:46,341 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:47,342 > TEXT '{"timestamp":1691469827.34187,"vibration":32.24...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:47,342 > Writing {"timestamp":1691469827.34187,"vibration":32.2488323711174,"rotate":511.886364263088,"pressure":91.3294290707084,"volt":172.535396206493,"anomaly":false,"failure":false}
+2023-08-08 11:43:47,344 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:48,344 > TEXT '{"timestamp":1691469828.344344,"vibration":38.8...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:48,344 > Writing {"timestamp":1691469828.344344,"vibration":38.8967757315964,"rotate":486.712303934437,"pressure":96.7339151541194,"volt":180.097494604215,"anomaly":false,"failure":false}
+2023-08-08 11:43:48,345 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:49,202 < PING '/}Ο' [text, 4 bytes]
+2023-08-08 11:43:49,202 > PONG '/}Ο' [text, 4 bytes]
+2023-08-08 11:43:49,346 > TEXT '{"timestamp":1691469829.346032,"vibration":40.1...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:49,346 > Writing {"timestamp":1691469829.346032,"vibration":40.1568749074533,"rotate":519.452812074631,"pressure":78.8807795743296,"volt":169.605854353272,"anomaly":false,"failure":false}
+2023-08-08 11:43:49,346 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:50,303 % sending keepalive ping
+2023-08-08 11:43:50,303 > PING '\x0e4dq' [text, 4 bytes]
+2023-08-08 11:43:50,304 < PONG '\x0e4dq' [text, 4 bytes]
+2023-08-08 11:43:50,304 % received keepalive pong
+2023-08-08 11:43:50,347 > TEXT '{"timestamp":1691469830.347043,"vibration":44.6...:false,"failure":false}' [168 bytes]
+2023-08-08 11:43:50,347 > Writing {"timestamp":1691469830.347043,"vibration":44.6423514036463,"rotate":427.050768115584,"pressure":91.699898772144,"volt":167.12911747166,"anomaly":false,"failure":false}
+2023-08-08 11:43:50,348 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:51,349 > TEXT '{"timestamp":1691469831.349609,"vibration":39.7...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:51,350 > Writing {"timestamp":1691469831.349609,"vibration":39.7819170940945,"rotate":422.811051731942,"pressure":92.439131917866,"volt":158.271400299502,"anomaly":false,"failure":false}
+2023-08-08 11:43:51,351 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:52,353 > TEXT '{"timestamp":1691469832.352708,"vibration":32.5...:false,"failure":false}' [169 bytes]
+2023-08-08 11:43:52,354 > Writing {"timestamp":1691469832.352708,"vibration":32.516837643016,"rotate":403.235950789794,"pressure":96.5354865291898,"volt":200.872429816452,"anomaly":false,"failure":false}
+2023-08-08 11:43:52,354 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:53,356 > TEXT '{"timestamp":1691469833.355767,"vibration":52.3...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:53,357 > Writing {"timestamp":1691469833.355767,"vibration":52.3558761423939,"rotate":495.777957815984,"pressure":93.4392900485745,"volt":181.257521797337,"anomaly":false,"failure":false}
+2023-08-08 11:43:53,358 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:54,359 > TEXT '{"timestamp":1691469834.359017,"vibration":29.5...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:54,359 > Writing {"timestamp":1691469834.359017,"vibration":29.5276645184185,"rotate":446.943947291323,"pressure":114.342060814369,"volt":197.363124535674,"anomaly":false,"failure":false}
+2023-08-08 11:43:54,361 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:55,361 > TEXT '{"timestamp":1691469835.360855,"vibration":35.7...:false,"failure":false}' [167 bytes]
+2023-08-08 11:43:55,361 > Writing {"timestamp":1691469835.360855,"vibration":35.79656613695,"rotate":384.645961639767,"pressure":103.373293274323,"volt":171.20089461638,"anomaly":false,"failure":false}
+2023-08-08 11:43:55,362 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:56,363 > TEXT '{"timestamp":1691469836.363239,"vibration":42.9...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:56,365 > Writing {"timestamp":1691469836.363239,"vibration":42.9925094428893,"rotate":486.459056124098,"pressure":86.9442726860067,"volt":160.528860515505,"anomaly":false,"failure":false}
+2023-08-08 11:43:56,366 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:57,367 > TEXT '{"timestamp":1691469837.366776,"vibration":34.2...:false,"failure":false}' [168 bytes]
+2023-08-08 11:43:57,367 > Writing {"timestamp":1691469837.366776,"vibration":34.203042245766,"rotate":420.610791774935,"pressure":110.40898468439,"volt":147.300678199494,"anomaly":false,"failure":false}
+2023-08-08 11:43:57,368 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:58,369 > TEXT '{"timestamp":1691469838.369636,"vibration":36.9...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:58,370 > Writing {"timestamp":1691469838.369636,"vibration":36.9637662572932,"rotate":412.965695619609,"pressure":90.7113544990198,"volt":160.458502533724,"anomaly":false,"failure":false}
+2023-08-08 11:43:58,371 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:43:59,372 > TEXT '{"timestamp":1691469839.372159,"vibration":37.1...:false,"failure":false}' [170 bytes]
+2023-08-08 11:43:59,372 > Writing {"timestamp":1691469839.372159,"vibration":37.1171025574271,"rotate":439.579459789252,"pressure":97.6758268612381,"volt":173.394522987457,"anomaly":false,"failure":false}
+2023-08-08 11:43:59,372 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:44:00,374 > TEXT '{"timestamp":1691469840.374009,"vibration":47.8...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:00,374 > Writing {"timestamp":1691469840.374009,"vibration":47.8624842432991,"rotate":445.606446690412,"pressure":105.993246631457,"volt":185.205355211986,"anomaly":false,"failure":false}
+2023-08-08 11:44:00,375 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:44:01,376 > TEXT '{"timestamp":1691469841.3764,"vibration":42.921...:false,"failure":false}' [167 bytes]
+2023-08-08 11:44:01,377 > Writing {"timestamp":1691469841.3764,"vibration":42.921336262961,"rotate":385.354923836333,"pressure":99.5068188291068,"volt":173.791252025995,"anomaly":false,"failure":false}
+2023-08-08 11:44:01,378 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:44:02,379 > TEXT '{"timestamp":1691469842.379091,"vibration":30.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:02,380 > Writing {"timestamp":1691469842.379091,"vibration":30.6651841402327,"rotate":497.840620071239,"pressure":101.641691473293,"volt":152.420775307383,"anomaly":false,"failure":false}
+2023-08-08 11:44:02,381 < TEXT '{"received":true}' [17 bytes]
+2023-08-08 11:44:03,382 > TEXT '{"timestamp":1691469843.381863,"vibration":43.0...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:03,382 > Writing {"timestamp":1691469843.381863,"vibration":43.0997584397585,"rotate":486.893593050412,"pressure":93.7438265959588,"volt":180.030714927875,"anomaly":false,"failure":false}
+2023-08-08 11:44:04,384 > TEXT '{"timestamp":1691469844.38463,"vibration":37.42...:false,"failure":false}' [168 bytes]
+2023-08-08 11:44:04,385 > Writing {"timestamp":1691469844.38463,"vibration":37.4222721271902,"rotate":495.37644917672,"pressure":111.950587257381,"volt":145.248485977335,"anomaly":false,"failure":false}
+2023-08-08 11:44:05,387 > TEXT '{"timestamp":1691469845.386973,"vibration":42.2...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:05,387 > Writing {"timestamp":1691469845.386973,"vibration":42.2433743345421,"rotate":424.542632589677,"pressure":102.485529812427,"volt":164.512216277121,"anomaly":false,"failure":false}
+2023-08-08 11:44:06,389 > TEXT '{"timestamp":1691469846.389466,"vibration":45.1...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:06,390 > Writing {"timestamp":1691469846.389466,"vibration":45.135193969702,"rotate":493.161428499927,"pressure":127.014497747491,"volt":165.258225067504,"anomaly":false,"failure":false}
+2023-08-08 11:44:07,392 > TEXT '{"timestamp":1691469847.392174,"vibration":31.2...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:07,392 > Writing {"timestamp":1691469847.392174,"vibration":31.2793209059224,"rotate":432.043773280403,"pressure":99.8244970061128,"volt":140.776309290179,"anomaly":false,"failure":false}
+2023-08-08 11:44:08,395 > TEXT '{"timestamp":1691469848.394807,"vibration":37.7...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:08,395 > Writing {"timestamp":1691469848.394807,"vibration":37.7898336790742,"rotate":414.274295077659,"pressure":86.3237598911335,"volt":183.800862835864,"anomaly":false,"failure":false}
+2023-08-08 11:44:09,396 > TEXT '{"timestamp":1691469849.39639,"vibration":35.94...:false,"failure":false}' [168 bytes]
+2023-08-08 11:44:09,397 > Writing {"timestamp":1691469849.39639,"vibration":35.9445640032966,"rotate":446.613842636735,"pressure":115.31331185493,"volt":160.656926076817,"anomaly":false,"failure":false}
+2023-08-08 11:44:10,305 % sending keepalive ping
+2023-08-08 11:44:10,306 > PING 3e 26 90 93 [binary, 4 bytes]
+2023-08-08 11:44:10,399 > TEXT '{"timestamp":1691469850.398781,"vibration":42.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:10,399 > Writing {"timestamp":1691469850.398781,"vibration":42.6386786957738,"rotate":418.069791413792,"pressure":80.6682867298282,"volt":164.989450250038,"anomaly":false,"failure":false}
+2023-08-08 11:44:11,401 > TEXT '{"timestamp":1691469851.401081,"vibration":40.5...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:11,401 > Writing {"timestamp":1691469851.401081,"vibration":40.566201816709,"rotate":437.960441292353,"pressure":85.2602473493877,"volt":190.927218387944,"anomaly":false,"failure":false}
+2023-08-08 11:44:12,405 > TEXT '{"timestamp":1691469852.404796,"vibration":41.7...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:12,406 > Writing {"timestamp":1691469852.404796,"vibration":41.7306976683389,"rotate":502.78745627213,"pressure":109.966020203034,"volt":179.550116165584,"anomaly":false,"failure":false}
+2023-08-08 11:44:13,408 > TEXT '{"timestamp":1691469853.40808,"vibration":36.09...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:13,408 > Writing {"timestamp":1691469853.40808,"vibration":36.0926564186992,"rotate":489.910897754736,"pressure":114.042406182779,"volt":168.373524545144,"anomaly":false,"failure":false}
+2023-08-08 11:44:14,416 > TEXT '{"timestamp":1691469854.414467,"vibration":35.4...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:14,417 > Writing {"timestamp":1691469854.414467,"vibration":35.4684440422458,"rotate":521.837936384375,"pressure":101.528033099946,"volt":177.70644167607,"anomaly":false,"failure":false}
+2023-08-08 11:44:15,419 > TEXT '{"timestamp":1691469855.419061,"vibration":36.3...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:15,420 > Writing {"timestamp":1691469855.419061,"vibration":36.3760336560555,"rotate":510.256976083485,"pressure":92.3628724738384,"volt":175.989077109109,"anomaly":false,"failure":false}
+2023-08-08 11:44:16,430 > TEXT '{"timestamp":1691469856.428326,"vibration":47.1...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:16,431 > Writing {"timestamp":1691469856.428326,"vibration":47.1636484547546,"rotate":418.84227125567,"pressure":95.8963122269502,"volt":194.942846711456,"anomaly":false,"failure":false}
+2023-08-08 11:44:17,435 > TEXT '{"timestamp":1691469857.434294,"vibration":32.3...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:17,436 > Writing {"timestamp":1691469857.434294,"vibration":32.3236161048206,"rotate":489.250315154368,"pressure":91.9263060883607,"volt":174.138401053782,"anomaly":false,"failure":false}
+2023-08-08 11:44:18,438 > TEXT '{"timestamp":1691469858.437816,"vibration":52.9...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:18,438 > Writing {"timestamp":1691469858.437816,"vibration":52.9973268810933,"rotate":459.95666980843,"pressure":96.6516244215867,"volt":177.594089348115,"anomaly":false,"failure":false}
+2023-08-08 11:44:19,440 > TEXT '{"timestamp":1691469859.44047,"vibration":47.87...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:19,441 > Writing {"timestamp":1691469859.44047,"vibration":47.8758037241602,"rotate":486.494803791468,"pressure":104.432962165098,"volt":175.213279625357,"anomaly":false,"failure":false}
+2023-08-08 11:44:20,443 > TEXT '{"timestamp":1691469860.442913,"vibration":49.0...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:20,443 > Writing {"timestamp":1691469860.442913,"vibration":49.0235846106559,"rotate":568.972310325907,"pressure":94.4885331488906,"volt":164.341435287555,"anomaly":false,"failure":false}
+2023-08-08 11:44:21,444 > TEXT '{"timestamp":1691469861.444659,"vibration":47.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:21,445 > Writing {"timestamp":1691469861.444659,"vibration":47.6984635458459,"rotate":454.317958809318,"pressure":85.2466095100028,"volt":171.464291946639,"anomaly":false,"failure":false}
+2023-08-08 11:44:22,447 > TEXT '{"timestamp":1691469862.447464,"vibration":50.6...:false,"failure":false}' [168 bytes]
+2023-08-08 11:44:22,448 > Writing {"timestamp":1691469862.447464,"vibration":50.60214119013,"rotate":448.360259073022,"pressure":98.3906177103568,"volt":194.581169676826,"anomaly":false,"failure":false}
+2023-08-08 11:44:23,451 > TEXT '{"timestamp":1691469863.450638,"vibration":54.6...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:23,451 > Writing {"timestamp":1691469863.450638,"vibration":54.6981626190991,"rotate":405.869840207545,"pressure":98.6408163025054,"volt":156.866112887156,"anomaly":false,"failure":false}
+2023-08-08 11:44:24,453 > TEXT '{"timestamp":1691469864.452936,"vibration":55.7...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:24,453 > Writing {"timestamp":1691469864.452936,"vibration":55.7680965643237,"rotate":439.841488841884,"pressure":87.8748712529239,"volt":171.826399979616,"anomaly":false,"failure":false}
+2023-08-08 11:44:25,455 > TEXT '{"timestamp":1691469865.454908,"vibration":55.0...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:25,455 > Writing {"timestamp":1691469865.454908,"vibration":55.062110464248,"rotate":427.675887842419,"pressure":116.008404147721,"volt":190.431959912675,"anomaly":false,"failure":false}
+2023-08-08 11:44:26,457 > TEXT '{"timestamp":1691469866.457569,"vibration":66.7...:false,"failure":false}' [169 bytes]
+2023-08-08 11:44:26,458 > Writing {"timestamp":1691469866.457569,"vibration":66.7645147253914,"rotate":487.422676443205,"pressure":90.423891865119,"volt":166.480683696159,"anomaly":false,"failure":false}
+2023-08-08 11:44:27,462 > TEXT '{"timestamp":1691469867.461625,"vibration":47.9...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:27,463 > Writing {"timestamp":1691469867.461625,"vibration":47.9467927154542,"rotate":469.854312624191,"pressure":85.7555462286093,"volt":154.199257880854,"anomaly":false,"failure":false}
+2023-08-08 11:44:28,465 > TEXT '{"timestamp":1691469868.464795,"vibration":48.8...:false,"failure":false}' [170 bytes]
+2023-08-08 11:44:28,465 > Writing {"timestamp":1691469868.464795,"vibration":48.8203008633275,"rotate":462.024181733621,"pressure":106.346717905804,"volt":156.953245915461,"anomaly":false,"failure":false}
+2023-08-08 11:44:29,206 = connection is CLOSED

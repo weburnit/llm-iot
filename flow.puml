@@ -1,0 +1,14 @@
+@startuml
+participant IOTDataSource as I
+participant MQTT as M
+participant "IoT ML Model" as Trainer
+
+participant WebSocket as W
+
+I -> M: Send Data source via consumer \n <b>python aitomic/main.py --mqtt=True \n--train-files=sample_data/*.feather
+
+M --> Trainer: detect anomaly by *trainer*
+M -> W: Share with websocket data (manager)
+
+W -> User: send sensor to User to render in highchart
+@enduml

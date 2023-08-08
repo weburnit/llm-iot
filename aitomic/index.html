@@ -115,6 +115,8 @@
                 chart.series[2].addPoint([data.timestamp, data.vibration])
                 if (data.anomaly || data.failure) {
                     chart.series[3].addPoint([data.timestamp, (data.vibration + data.volt + data.rotate) / 3])
+                } else {
+                    chart.series[3].addPoint([data.timestamp, 0])
                 }
             }
         }
