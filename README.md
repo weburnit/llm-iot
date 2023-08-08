@@ -51,6 +51,10 @@ python aitomic/main.py --mqtt=true --train-files=sample_data/iot_pmfp_data.feath
 
 Here is a summary of the main aspects of the Trainer class:
 
+I have trained 30% of sample data which can be found on [Google Drive - trained model](https://drive.google.com/drive/folders/1HY98u_rtc5xixjamGAW2t9slkNnWH8Yq?usp=drive_link)
+
+I used google/flan-t5-based
+
 ## Initialization:
 
 At the start, the `Trainer` is initialized with a model, tokenizer, and datasets (all set to None). There are also
@@ -79,4 +83,5 @@ The generate function uses the loaded model and tokenizer to generate a response
 ## Missing part
 
 * Dont't adopt `accelerate` to speed up training
+* Can not train full data from provided sample. Google Colab has been crashed 3 times, that costs me 3 days for nothing.
 * Lack of ReactJS skill to complete nicer frontend. I can understand highchart and adopt it in Pure JS
