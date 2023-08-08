@@ -78,4 +78,5 @@ The generate function uses the loaded model and tokenizer to generate a response
 
 ## Missing part
 
-* Didn't adopt `accelerate` to speed up training
+* Dont't adopt `accelerate` to speed up training
+* Lack of ReactJS skill to complete nicer frontend. I can understand highchart and adopt it in Pure JS
