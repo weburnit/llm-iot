@@ -10,10 +10,14 @@
 
 <figure class="highcharts-figure">
     <div id="container"></div>
+
+    <div id="container-anomaly"></div>
     <p class="highcharts-description">
         This chart feed data from Websocket
     </p>
 </figure>
+
+<button></button>
 
 <script>
     (async () => {
@@ -25,7 +29,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'All signal from device',
+                text: 'Signal',
                 align: 'left'
             },
             subtitle: {
@@ -71,12 +75,34 @@
                 }
             },
 
-            series: [{
-                type: 'area',
-                name: 'USD to EUR',
-                data: data
-            }]
+            series: [
+                {
+                    type: 'area',
+                    name: 'Rotate Signal',
+                    color: '#3d96ae',
+                    data: data
+                },
+                {
+                    type: 'area',
+                    name: 'Volt Signal',
+                    color: '#453dae',
+                    data: data
+                },
+                {
+                    type: 'area',
+                    name: 'Vibration Signal',
+                    color: '#e5a552',
+                    data: data
+                },
+                {
+                    type: 'area',
+                    name: 'Anomaly Detection',
+                    color: '#e5525e',
+                    data: data
+                }
+            ]
         });
+
         const socket = new WebSocket("ws://localhost:PORT/ws/sensor");
 
         socket.onmessage = (event) => {
@@ -85,8 +111,14 @@
             if (data.timestamp > 0 && data.rotate > 0) {
                 console.log("New data")
                 chart.series[0].addPoint([data.timestamp, data.rotate])
+                chart.series[1].addPoint([data.timestamp, data.volt])
+                chart.series[2].addPoint([data.timestamp, data.vibration])
+                if (data.anomaly || data.failure) {
+                    chart.series[3].addPoint([data.timestamp, (data.vibration + data.volt + data.rotate) / 3])
+                }
             }
         }
+
     })();
 </script>
 </body>

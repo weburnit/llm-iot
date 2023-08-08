@@ -1,5 +1,4 @@
 import os
-import json
 import pandas as pd
 import gc
 import transformers
@@ -8,7 +7,7 @@ import datasets
 from contextlib import nullcontext
 from datasets import Dataset, DatasetDict
 from sklearn.model_selection import train_test_split
-from config import *
+from aitomic.config import *
 
 
 class IoTModel(object):
@@ -63,11 +62,11 @@ class IoTModel(object):
             task_type="CAUSAL_LM",
         ))
 
-        if not os.path.exists('lora'):
-            os.makedirs('lora')
+        if not os.path.exists('../lora'):
+            os.makedirs('../lora')
 
         sanitized_model_name = self.model_name.replace('/', '_').replace('.', '_')
-        output_dir = f"lora/{sanitized_model_name}_{new_peft_model_name}"
+        output_dir = f"aitomic/lora/{sanitized_model_name}_{new_peft_model_name}"
 
         training_args = transformers.TrainingArguments(
             per_device_train_batch_size=kwargs['micro_batch_size'],
