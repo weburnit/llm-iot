@@ -11,6 +11,9 @@
 
 ![High Chart IoT Signal](./demo.png)
 
+* Red line indicates the anomaly/failure detection point. I'm supposed to break it down for 2 lines rather than single one like this
+* Other lines are device signals
+* Data is streamed near realtime via websocket
 # Installation
 ```shell
 git clone https://github.com/weburnit/llm-iot
