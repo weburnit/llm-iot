@@ -302,7 +302,7 @@ def load_data(feather_files, metadata_file):
             lambda
                 row: f"system: You are an iot assistant designed to analyze the iot device signal(volt,vibration,pressure, rotate). user will send a task Detect iot device with signal. then you detect the failure and anomaly True or False"
                      f"user: Detect iot device with volt: {row['volt']} vibration: {row['vibration']} pressure: {row['pressure']} rotate: {row['rotate']} \n\n "
-                     f"assistant: detect failure {row['failure']} anomaly {row['anomaly']}",
+                     f"assistant: failure {row['failure']} anomaly {row['anomaly']}",
             axis=1))
     data = data.assign(failure=data.apply(lambda row: f"failure {row['failure']} and anomaly {row['anomaly']}", axis=1))
     drop_cols = [col for col in data.columns if col not in ['signal', 'failure']]
