@@ -10,6 +10,7 @@ import os
 from aitomic.model import IoTModel, load_dataframe
 from aitomic.config import logger, HAS_CUDA
 from aitomic.iot.connection import ConnectionManager
+from aitomic.util import few_shot, complete, get_json
 
 script_dir = os.path.dirname(__file__)
 
@@ -51,14 +52,13 @@ async def websocket_mqtt_endpoint(*, websocket: WebSocket):
             sensor_data = SensorData.parse_raw(data)
 
             if HAS_CUDA:  # Detect anomaly and failure
-                anomaly_detection = await trainer.generate(
-                    ANOMALY_PROMPT.format(sensor_data.volt, sensor_data.vibration, sensor_data.pressure,
-                                          sensor_data.rotate))
-                failure_detection = await trainer.generate(
-                    FAILURE_PROMPT.format(sensor_data.volt, sensor_data.vibration, sensor_data.pressure,
-                                          sensor_data.rotate))
-                sensor_data.anomaly = 'true' in anomaly_detection.lower()
-                sensor_data.failure = 'true' in failure_detection.lower()
+                detection = await trainer.generate(few_shot() + complete(sensor_data))
+
+                json_detect = get_json(detection)
+                if json_detect is not None:
+                    sensor_data.anomaly = json_detect['failure']
+                    sensor_data.failure = json_detect['failure']
+
             else:  # Mock anomaly detection
                 if datetime.datetime.now().timestamp() % 3 <= 1:
                     sensor_data.anomaly = True
