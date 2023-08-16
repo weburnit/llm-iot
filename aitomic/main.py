@@ -97,6 +97,7 @@ if __name__ == "__main__":
     if args.mqtt:
         iot_data = load_dataframe(args.train_files, args.metadata_file)
         asyncio.run(mock_mqtt(iot_data, PORT))
+        pass
 
     trainer.load_model(model_name=args.train_base_model)  # google/flan-t5-base
     if args.train:
