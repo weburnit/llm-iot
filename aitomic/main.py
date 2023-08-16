@@ -1,7 +1,6 @@
 import datetime
 
 from fastapi import FastAPI, WebSocket, Request, WebSocketDisconnect
-from aitomic.config import FAILURE_PROMPT, ANOMALY_PROMPT
 from aitomic.iot import SensorData, mock_mqtt
 import argparse
 import asyncio
@@ -14,7 +13,7 @@ from aitomic.util import few_shot, complete, get_json
 
 script_dir = os.path.dirname(__file__)
 
-PORT = 8085
+PORT = 8080
 app = FastAPI(version="0.1")
 trainer = IoTModel()
 
@@ -89,8 +88,11 @@ if __name__ == "__main__":
     parser.add_argument('--train-base-model', type=str, help='Base Machine Learning model')
     parser.add_argument('--trained-new-name', type=str, help='Trained model name')
     parser.add_argument('--mqtt', type=bool, help='Enable Mqtt')
+    parser.add_argument('--port', type=bool, default=8080, help='PORT')
 
     args = parser.parse_args()
+    if args.port > 0:
+        PORT = args.port
 
     if args.mqtt:
         iot_data = load_dataframe(args.train_files, args.metadata_file)
