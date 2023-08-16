@@ -88,7 +88,7 @@ if __name__ == "__main__":
     parser.add_argument('--train-base-model', type=str, help='Base Machine Learning model')
     parser.add_argument('--trained-new-name', type=str, help='Trained model name')
     parser.add_argument('--mqtt', type=bool, help='Enable Mqtt')
-    parser.add_argument('--port', type=bool, default=8080, help='PORT')
+    parser.add_argument('--port', type=int, default=8080, help='PORT')
 
     args = parser.parse_args()
     if args.port > 0:
